@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local ="clr-namespace:NotDefteri"
+             mc:Ignorable="d"
+             x:Class="NotDefteri.MainPage">
+
+    <StackLayout Margin="10,35,10,10">
+        <Label Text="Notlarım"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               />
+        <Editor x:Name="notGirisi"
+                Placeholder="Notunuzu giriniz."
+                HeightRequest="100"
+                Text="{Binding NotMetni, Mode=TwoWay}"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Grid.Column="0" Clicked="NotKaydet"
+                    Text="KAYDET"/>
+            <Button Grid.Row="0" Grid.Column="1" Clicked="NotSil"
+                    Text="SİL" />
+                       
+        </Grid>
+    </StackLayout>   
+</ContentPage>
